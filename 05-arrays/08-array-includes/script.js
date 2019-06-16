@@ -25,5 +25,25 @@
         "cerise",
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        var pommes = [];
+
+        fruits.forEach((fruit) => {
+            if (fruit.toLowerCase() == "pomme") {
+                pommes.push(fruit);
+            }
+        });
+
+        var checkPommesNumber;
+
+        if (pommes.length <= 1) {
+            checkPommesNumber = "une pomme";
+        } else {
+            checkPommesNumber = pommes.length + " pommes";
+        }
+
+        console.log("Oui, il y a " + checkPommesNumber);
+    });
+
 })();

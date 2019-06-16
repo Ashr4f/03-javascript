@@ -10,9 +10,22 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to get the value of an input: document.getElementById("element-id").value
+
+    function factorialize(x) {
+        if (x === 0) {
+            return 1;
+        }
+        return x * factorialize(x - 1);
+    }
 
     document.getElementById("run").addEventListener("click", () => {
-        // your code here
+        var numberFieldValue = document.getElementById("number").value;
+        if (isNaN(numberFieldValue)) {
+            alert("Entrez un numéro valide");
+        } else if (numberFieldValue < 0) {
+            alert("Seulement des nombres positifs");
+        } else {
+            alert("La factorielle de " + numberFieldValue + " est: " + factorialize(numberFieldValue));
+        }
     });
 })();

@@ -22,6 +22,14 @@
         "raisin",
         "cerise",
     ];
+    console.log("Old array");
+    console.log(fruits);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", function oneTimeClick() {
+        fruits.splice(0, 1); // or .shitf();
+        fruits.splice(-1, 1);
+        console.log("New array");
+        console.log(fruits);
+        this.removeEventListener("click", oneTimeClick);
+    });
 })();

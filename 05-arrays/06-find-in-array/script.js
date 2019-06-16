@@ -10,8 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    const people = [
-        {
+    const people = [{
             firstname: "Bradford",
             lastname: "Coldbath",
             email: "bcoldbath0@wired.com",
@@ -88,5 +87,17 @@
         },
     ];
 
-    // your code here
+
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        people.forEach((person, index) => {
+            if (person.firstname == "Jean" && person.lastname == "Dupont") {
+                console.log('%c' + person.lastname + " " + person.firstname + " details:" + "\n" + "Email: " + person.email + "\n" + "Index: " + index, 'background: #0D0208; color: #00FF41; font-size: 20px; font-weight: 900; padding: 4px;');
+            }
+        });
+
+    });
+
+
 })();

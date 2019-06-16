@@ -27,5 +27,14 @@
         "cerise",
     ];
 
-    // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        fruitsDeduplicated = fruits.filter(function (fruit, currentPosition) {
+            return fruits.indexOf(fruit) == currentPosition;
+        });
+
+        console.log(fruitsDeduplicated);
+
+    });
 })();

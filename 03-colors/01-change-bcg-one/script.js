@@ -10,5 +10,36 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    function changeBgColor(color) {
+        document.querySelector("html").style.backgroundColor = color;
+    }
+
+    const getColorName = colorName => {
+        switch (colorName) {
+            case "red":
+                changeBgColor("red");
+                break;
+            case "green":
+                changeBgColor("green");
+                break;
+            case "yellow":
+                changeBgColor("yellow");
+                break;
+            case "blue":
+                changeBgColor("blue");
+                break;
+
+            default:
+                break;
+        }
+    };
+
+    Array.from(document.querySelectorAll("button")).forEach($btn =>
+        $btn.addEventListener(
+            "click",
+            () => (getColorName($btn.id), false),
+        ),
+    );
+
 })();

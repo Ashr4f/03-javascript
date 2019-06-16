@@ -10,8 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    const people = [
-        {
+    const people = [{
             firstname: "Grenville",
             lastname: "Stive",
             age: 64,
@@ -88,5 +87,29 @@
         },
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        /* POSSIBLE SOLUTION
+        var totalAges = 0;
+        for (let i = 0; i < people.length; i++) {
+            totalAges += people[i].age;
+        }
+        console.log(totalAges);
+        */
+
+        var agesToArray = [];
+
+        people.forEach((person, index) => {
+            agesToArray.push(person.age);
+        });
+
+        var agesToArrayTotal = agesToArray.reduce(function (a, b) {
+            return a + b;
+        }, 0);
+
+
+        console.log(agesToArrayTotal);
+
+    });
+
 })();

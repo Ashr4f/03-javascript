@@ -10,5 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    function changeBgColor(color) {
+        document.querySelector("html").style.backgroundColor = color;
+    }
+
+    document.getElementById("run").addEventListener("click", function () {
+        var colorInputValue = document.getElementById("color").value;
+        changeBgColor(colorInputValue);
+    });
+
 })();
