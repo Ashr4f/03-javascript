@@ -22,5 +22,23 @@
         "Lucas",
     ]);
 
-    // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        console.log("Il y a " + people.size + " personne dans le Set people ");
+
+        people.forEach(function (person) {
+            if (person.toLowerCase() == "alexandre") {
+                console.log("Et " + person + " fait partie du Set");
+            }
+        });
+
+        /* second solution
+        if (people.has("Alexandre")) {
+                console.log("Et Alexandre fait partie du Set");
+            }
+        */
+
+    });
+
 })();

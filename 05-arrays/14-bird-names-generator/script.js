@@ -10,20 +10,50 @@
 // You will have time to focus on it later.
 
 (() => {
-    const birds = [
-        {name: "mouette", fem: true},
-        {name: "corbeau"},
-        {name: "mésange", fem: true},
-        {name: "hibou"},
-        {name: "buse", fem: true},
-        {name: "pigeon"},
-        {name: "pie", fem: true},
-        {name: "vautour"},
-        {name: "faucon"},
-        {name: "rouge-gorge"},
-        {name: "tourterelle", fem: true},
-        {name: "corneille", fem: true},
+    const birds = [{
+            name: "mouette",
+            fem: true
+        },
+        {
+            name: "corbeau"
+        },
+        {
+            name: "mésange",
+            fem: true
+        },
+        {
+            name: "hibou"
+        },
+        {
+            name: "buse",
+            fem: true
+        },
+        {
+            name: "pigeon"
+        },
+        {
+            name: "pie",
+            fem: true
+        },
+        {
+            name: "vautour"
+        },
+        {
+            name: "faucon"
+        },
+        {
+            name: "rouge-gorge"
+        },
+        {
+            name: "tourterelle",
+            fem: true
+        },
+        {
+            name: "corneille",
+            fem: true
+        },
     ];
+
     const adjectives = new Set([
         "cendré",
         "huppé",
@@ -38,5 +68,20 @@
         "arboré",
     ]);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        var pickRandomBird = Math.floor(Math.random() * birds.length);
+        var adjectivesToArray = Array.from(adjectives);
+        var pickRandomAdjective = Math.floor(Math.random() * adjectivesToArray.length);
+        var randomBird = birds[pickRandomBird];
+        var randomAdjective = adjectivesToArray[pickRandomAdjective];
+
+        if (randomBird.fem == true) {
+            document.getElementById("target").innerHTML = "La " + randomBird.name + " " + randomAdjective + "e";
+        } else {
+            document.getElementById("target").innerHTML = "Le " + randomBird.name + " " + randomAdjective;
+        }
+
+    });
+
 })();

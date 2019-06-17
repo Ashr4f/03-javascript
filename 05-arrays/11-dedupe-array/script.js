@@ -30,11 +30,22 @@
 
     document.getElementById("run").addEventListener("click", () => {
 
-        fruitsDeduplicated = fruits.filter(function (fruit, currentPosition) {
+        /*fruitsDeduplicated = fruits.filter(function (fruit, currentPosition) {
             return fruits.indexOf(fruit) == currentPosition;
-        });
+        });*/
 
-        console.log(fruitsDeduplicated);
+
+        // I FIND THIS ONE EASIER, LOL
+
+        var fruitsToSet = new Set(fruits);
+        var fruitsDeduplicated = Array.from(fruitsToSet);
+        fruits.splice(0);
+
+        for (let i = 0; i < fruitsDeduplicated.length; i++) {
+            fruits.push(fruitsDeduplicated[i]);
+        }
+
+        console.log(fruits);
 
     });
 })();
