@@ -10,5 +10,30 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    function makeTable(rows, columns) {
+        var target = document.getElementById("target");
+        var tables = document.querySelectorAll("#target table");
+
+        var table;
+        var td;
+        var tr;
+
+        table = document.createElement("table");
+        target.appendChild(table);
+
+        for (let i = 0; i < rows; i++) {
+            tr = document.createElement("tr");
+            for (let j = 0; j < columns; j++) {
+                td = document.createElement("td");
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    }
+
+
+    var newTable = makeTable(10, 1);
+
+    console.log(newTable);
+
 })();

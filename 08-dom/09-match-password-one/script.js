@@ -10,5 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var firstInput = document.getElementById("pass-one");
+    var secondInput = document.getElementById("pass-two");
+    var inputsColor = firstInput.style.borderColor;
+
+    firstInput.style.borderColor = inputsColor;
+    secondInput.style.borderColor = inputsColor;
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        if (firstInput.value !== secondInput.value) {
+            firstInput.style.borderColor = "#F00";
+            secondInput.style.borderColor = "#F00";
+        } else {
+            firstInput.style.borderColor = inputsColor;
+            secondInput.style.borderColor = inputsColor;
+        }
+
+    });
+
 })();

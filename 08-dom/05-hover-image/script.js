@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var image = document.querySelector("img");
+    var imageDataHover = image.getAttribute("data-hover");
+    var imageSource = image.getAttribute("src");
+
+    image.addEventListener("mouseover", function () {
+        this.setAttribute("src", imageDataHover);
+        this.style.marginLeft = "5px";
+    });
+
+    image.addEventListener("mouseleave", function () {
+        this.setAttribute("src", imageSource);
+        this.style.marginLeft = "0";
+    });
+
 })();

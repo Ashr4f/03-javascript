@@ -10,5 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var paragraphs = document.getElementsByClassName("target");
+
+    for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].innerHTML = "owned";
+    }
+
+
+
 })();

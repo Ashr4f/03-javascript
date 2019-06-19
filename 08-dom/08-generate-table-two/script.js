@@ -10,5 +10,34 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    class Table {
+
+        constructor(rows, columns) {
+
+            var target = document.getElementById("target");
+
+            var table;
+            var tr;
+            var td;
+
+            table = document.createElement("table");
+            target.appendChild(table);
+
+            for (let i = 0; i < rows; i++) {
+                tr = document.createElement("tr");
+                for (let j = 0; j < columns; j++) {
+                    td = document.createElement("td");
+                    // td.innerHTML = i + 1 + " * " + (j + 1) + " = " + (i + 1) * (j + 1);
+                    td.innerHTML = (i + 1) * (j + 1);
+
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+
+        }
+    }
+
+
+    new Table(10, 10);
 })();

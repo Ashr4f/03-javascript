@@ -10,5 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        var my = new Object();
+        my.lastname = "Ahmed";
+        my.firstname = "Ashraf";
+        my.age = 22;
+        my.city = "Mosul";
+        my.country = "Iraq";
+        console.log(my);
+    });
 })();

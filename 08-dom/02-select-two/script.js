@@ -10,5 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.querySelector(".target").innerHTML = "owned";
+    // POSSIBLE 
+    // document.getElementsByClassName("target")[0].innerHTML = "owned";
 })();

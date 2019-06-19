@@ -16,5 +16,12 @@
             this.age = age;
         }
     }
-    // your code here
+
+    document.getElementById("run").addEventListener("click", () => {
+        var skitty = new Cat("Skitty", 9);
+        var pixel = new Cat("Pixel", 6);
+
+        console.log(skitty.name + ", " + skitty.age + " ans, et " + pixel.name + ", " + pixel.age + " ans");
+    });
+
 })();

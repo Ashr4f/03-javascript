@@ -10,5 +10,20 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var source = document.getElementById("source");
+    var sourceDataImage = source.getAttribute("data-image");
+    var target = document.getElementById("target");
+    var createNewImage = document.createElement("img");
+
+    createNewImage.src = sourceDataImage;
+    createNewImage.id = "image";
+
+    target.appendChild(createNewImage);
+    source.parentNode.removeChild(source);
+
+    var newImage = document.getElementById("image");
+
+    newImage.style.margin = "0 auto";
+
+
 })();
