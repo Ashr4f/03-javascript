@@ -10,5 +10,26 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var inputField = document.getElementById("pass-one");
+    var counter = document.getElementById("counter");
+
+
+
+    inputField.addEventListener("input", function () {
+
+        for (let i = 0; i <= inputField.value.length; i++) {
+            counter.innerHTML = i + "/10";
+        }
+
+        if (inputField.value.length >= 10) {
+            this.onkeypress = function () {
+                return false;
+            }
+        } else {
+            this.onkeypress = function () {
+                return true;
+            }
+        }
+
+    });
 })();

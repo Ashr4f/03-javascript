@@ -9,4 +9,34 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(() => {})();
+(() => {
+    var firstInput = document.getElementById("pass-one");
+    var secondInput = document.getElementById("pass-two");
+
+    function addClass(el, className) {
+        if (el.classList) {
+            el.classList.add(className);
+        } else {
+            el.className += " " + className;
+        }
+    }
+
+    function removeClass(el, className) {
+        if (el.classList)
+            el.classList.remove(className);
+        else
+            el.className = el.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " ");
+    }
+
+    document.getElementById("run").addEventListener("click", () => {
+
+        if (firstInput.value !== secondInput.value) {
+            addClass(firstInput, "error");
+            addClass(secondInput, "error");
+        } else {
+            removeClass(firstInput, "error");
+            removeClass(secondInput, "error");
+        }
+
+    });
+})();

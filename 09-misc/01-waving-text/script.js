@@ -10,5 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var target = document.getElementById("target");
+
+    target.style.marginTop = "100px";
+
+    var splitTarget = target.innerHTML.split("");
+
+    target.innerHTML = "";
+
+    splitTarget.forEach(letter => {
+        targetLettersToSpan = document.createElement("span");
+        targetLettersToSpan.innerHTML = letter;
+        target.appendChild(targetLettersToSpan);
+    });
+
+    var spans = document.querySelectorAll("#target span");
+
+
+    var fontSizes = [16, 18, 20, 22, 24];
+
+
+    var counterMaxNumber = fontSizes.length;
+    var counterMinNumber = 0;
+
+
+    for (let i = counterMinNumber; i <= spans.length; i++) {
+
+    }
+
 })();
