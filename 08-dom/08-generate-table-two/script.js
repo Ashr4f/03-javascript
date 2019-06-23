@@ -10,34 +10,25 @@
 // You will have time to focus on it later.
 
 (() => {
-    class Table {
+    var target = document.getElementById("target");
 
-        constructor(rows, columns) {
+    var table;
+    var tr;
+    var td;
 
-            var target = document.getElementById("target");
+    table = document.createElement("table");
+    target.appendChild(table);
 
-            var table;
-            var tr;
-            var td;
+    for (let i = 0; i < 10; i++) {
+        tr = document.createElement("tr");
+        for (let j = 0; j < 10; j++) {
+            td = document.createElement("td");
+            // td.innerHTML = i + 1 + " * " + (j + 1) + " = " + (i + 1) * (j + 1);
+            td.innerHTML = (i + 1) * (j + 1);
 
-            table = document.createElement("table");
-            target.appendChild(table);
-
-            for (let i = 0; i < rows; i++) {
-                tr = document.createElement("tr");
-                for (let j = 0; j < columns; j++) {
-                    td = document.createElement("td");
-                    // td.innerHTML = i + 1 + " * " + (j + 1) + " = " + (i + 1) * (j + 1);
-                    td.innerHTML = (i + 1) * (j + 1);
-
-                    tr.appendChild(td);
-                }
-                table.appendChild(tr);
-            }
-
+            tr.appendChild(td);
         }
+        table.appendChild(tr);
     }
 
-
-    new Table(10, 10);
 })();

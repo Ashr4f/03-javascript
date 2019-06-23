@@ -48,7 +48,6 @@
     showMessage();
 
     setInterval(() => {
-        getTime();
         showMessage();
     }, 1000);
 

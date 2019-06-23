@@ -10,5 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    var randomNumber = Math.floor(Math.random() * 100);
+    var userGuessedNumber;
+    while (isNaN(userGuessedNumber)) {
+        userGuessedNumber = parseFloat(prompt("Soumettre un chiffre"));
+    }
+
+    if (userGuessedNumber > randomNumber) {
+        alert("Vous avez choisi " + userGuessedNumber + ", et votre choix est plus GRAND que moi 😔");
+    }
+    if (userGuessedNumber < randomNumber) {
+        alert("Vous avez choisi " + userGuessedNumber + ", et votre choix est plus PETIT que moi 🙂");
+    }
+    if (userGuessedNumber == randomNumber) {
+        alert("Bravo, vous avez choisi " + userGuessedNumber + ", et votre choix est exactement le MÊME que moi 😮");
+    }
+
 })();

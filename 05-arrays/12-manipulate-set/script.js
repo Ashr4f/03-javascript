@@ -23,17 +23,23 @@
         "cerise",
     ]);
 
+    // CHANGE SET TO ARRAY
+    var fruitsToArray = [...fruits];
 
+    // CHANGE FRUITS VALUE USING ITS INDEX
+    fruitsToArray[0] = "banane";
+    fruitsToArray[fruitsToArray.length - 1] = "kiwi";
+
+    // CLEAR THE SET
+    fruits.clear();
+
+    // CLICK EVENT
     document.getElementById("run").addEventListener("click", () => {
 
-        fruits.forEach(function (fruit) {
-            if (fruit == "pomme" || fruit == "cerise") {
-                fruits.delete(fruit);
-            }
+        // PUSH THE NEW MODIFIED ARRAY TO THE CLEARED SET (furits)
+        fruitsToArray.forEach(function (fruit, index) {
+            fruits.add(fruit);
         });
-
-        fruits.add("banane");
-        fruits.add("kiwi");
 
         console.log(fruits);
 

@@ -17,9 +17,7 @@
 
     inputField.addEventListener("input", function () {
 
-        for (let i = 0; i <= inputField.value.length; i++) {
-            counter.innerHTML = i + "/10";
-        }
+        counter.innerHTML = inputField.value.length + "/10";
 
         if (inputField.value.length >= 10) {
             this.onkeypress = function () {

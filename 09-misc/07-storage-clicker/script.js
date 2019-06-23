@@ -10,5 +10,6 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var target = document.getElementById("target");
+    var incrementButton = document.getElementById("increment");
 })();

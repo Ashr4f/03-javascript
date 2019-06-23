@@ -10,5 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var target = document.getElementById("target");
+    var letters = target.innerHTML.split("");
+    var rapidity = 75;
+
+    target.innerHTML = "";
+    var i = 0;
+
+
+    function s() {
+        if (i < letters.length) {
+            target.innerHTML += letters[i];
+            i++;
+            setTimeout(s, rapidity);
+        }
+    }
+    s();
+
 })();

@@ -10,5 +10,10 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var slider = document.getElementById("slider");
+    var target = document.getElementById("target");
+
+    slider.addEventListener("input", function () {
+        target.innerHTML = "+" + this.value;
+    });
 })();

@@ -22,14 +22,17 @@
         "raisin",
         "cerise",
     ];
-    console.log("Old array");
-    console.log(fruits);
 
     document.getElementById("run").addEventListener("click", function oneTimeClick() {
-        fruits.splice(0, 1); // or .shitf();
-        fruits.splice(-1, 1);
-        console.log("New array");
+
+        /*fruits.splice(0, 1); // or .shitf();
+        fruits.splice(-1, 1); // or .pop();
+        fruits.unshift("banane");
+        fruits.push("kiwi");*/
+
+        fruits[0] = "banane";
+        fruits[fruits.length - 1] = "kiwi";
+
         console.log(fruits);
-        this.removeEventListener("click", oneTimeClick);
     });
 })();

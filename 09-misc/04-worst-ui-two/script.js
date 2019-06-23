@@ -10,5 +10,31 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    var target = document.getElementById("target");
+    var buttons = document.querySelectorAll("button");
+    var results = [];
+
+    buttons.forEach(function (button, index) {
+        button.addEventListener("click", function () {
+            var thisMinValue = parseInt(this.getAttribute("data-min"));
+            var thisMaxValue = parseInt(this.getAttribute("data-max"));
+
+            if (this.innerHTML >= thisMaxValue) {
+                this.innerHTML = thisMinValue - 1;
+            }
+            if (this.innerHTML < 10) {
+                this.innerHTML = ("0" + (parseInt(this.innerHTML) + 1)).slice(-2);
+            } else {
+                this.innerHTML = parseInt(this.innerHTML) + 1;
+            }
+
+            results.splice(0, results.length);
+            for (let i = 0; i < buttons.length; i++) {
+                results.push(buttons[i].innerHTML);
+            }
+            target.innerHTML = "0" + results.join("");
+
+        });
+    });
+
 })();
