@@ -10,6 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
+
     var target = document.getElementById("target");
     var incrementButton = document.getElementById("increment");
+    var counter = 0;
+
+    if (localStorage.getItem("counter") != null) {
+        counter = parseInt(localStorage.getItem("counter"));
+        target.innerText = counter;
+    }
+
+
+    incrementButton.addEventListener("click", function () {
+        counter += 1;
+        localStorage.setItem("counter", counter);
+        target.innerText = counter;
+    });
+
 })();
