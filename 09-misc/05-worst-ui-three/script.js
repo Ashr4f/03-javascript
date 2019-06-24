@@ -27,9 +27,10 @@
                 this.innerHTML = "Stop";
             }
 
-            let inputMinValue = parseInt(this.parentNode.querySelector("input").getAttribute("data-min"));
-            let inputMaxValue = parseInt(this.parentNode.querySelector("input").getAttribute("data-max")); // previousElementSibling
             let inputField = this.parentNode.querySelector("input");
+            let inputMinValue = parseInt(inputField.getAttribute("data-min"));
+            let inputMaxValue = parseInt(inputField.getAttribute("data-max")); // previousElementSibling
+
 
             clickCounter++;
             let phoneSlot = setInterval(() => {
