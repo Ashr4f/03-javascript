@@ -36,16 +36,8 @@
 
 
         // I FIND THIS ONE EASIER, LOL
-
-        var fruitsToSet = new Set(fruits);
-        var fruitsDeduplicated = Array.from(fruitsToSet);
-        fruits.splice(0);
-
-        for (let i = 0; i < fruitsDeduplicated.length; i++) {
-            fruits.push(fruitsDeduplicated[i]);
-        }
-
-        console.log(fruits);
+        let unique = Array.from(new Set(fruits));
+        console.log(unique);
 
     });
 })();

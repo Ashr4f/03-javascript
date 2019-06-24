@@ -10,9 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    var target = document.getElementById("target");
-    var buttons = document.querySelectorAll("button");
-    var results = [];
+    let target = document.getElementById("target");
+    let buttons = document.querySelectorAll("button");
+    const results = [];
 
     buttons.forEach(function (button, index) {
         for (let i = 0; i < buttons.length; i++) {
@@ -27,30 +27,30 @@
                 this.innerHTML = "Stop";
             }
 
-            var inputMinValue = parseInt(this.previousElementSibling.getAttribute("data-min"));
-            var inputMaxValue = parseInt(this.previousElementSibling.getAttribute("data-max"));
-            var $this = this;
+            let inputMinValue = parseInt(this.parentNode.querySelector("input").getAttribute("data-min"));
+            let inputMaxValue = parseInt(this.parentNode.querySelector("input").getAttribute("data-max")); // previousElementSibling
+            let inputField = this.parentNode.querySelector("input");
 
             clickCounter++;
-            var casinoEffect = setInterval(() => {
-                if ($this.previousElementSibling.value >= inputMaxValue) {
-                    $this.previousElementSibling.value = inputMinValue - 1;
+            let phoneSlot = setInterval(() => {
+                if (inputField.value >= inputMaxValue) {
+                    inputField.value = inputMinValue - 1;
                 }
-                if ($this.previousElementSibling.value < 10) {
-                    $this.previousElementSibling.value = ("0" + (parseInt($this.previousElementSibling.value) + 1)).slice(-2);
+                if (inputField.value < 10) {
+                    inputField.value = ("0" + (parseInt(inputField.value) + 1)).slice(-2);
                 } else {
-                    $this.previousElementSibling.value = parseInt($this.previousElementSibling.value) + 1;
+                    inputField.value = parseInt(inputField.value) + 1;
                 }
                 if (clickCounter % 2 == 0) {
-                    clearInterval(casinoEffect);
+                    clearInterval(phoneSlot);
                 }
 
                 results.splice(0, results.length);
 
                 for (let i = 0; i < buttons.length; i++) {
-                    results.push(buttons[i].previousElementSibling.value);
+                    results.push(buttons[i].parentNode.querySelector("input").value);
                 }
-                target.innerHTML = "+" + results.join("");
+                target.innerHTML = `+${results.join("")}`;
             }, 50);
 
         });
