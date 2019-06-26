@@ -10,7 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
-    var paragraphs = document.getElementsByClassName("target");
+    var paragraphs = document.querySelectorAll("target");
 
     for (let i = 0; i < paragraphs.length; i++) {
         paragraphs[i].innerHTML = "owned";

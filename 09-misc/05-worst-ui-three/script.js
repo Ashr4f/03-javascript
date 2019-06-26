@@ -27,9 +27,9 @@
                 this.innerHTML = "Stop";
             }
 
-            let inputField = this.parentNode.querySelector("input");
+            let inputField = this.parentNode.querySelector("input"); // previousElementSibling
             let inputMinValue = parseInt(inputField.getAttribute("data-min"));
-            let inputMaxValue = parseInt(inputField.getAttribute("data-max")); // previousElementSibling
+            let inputMaxValue = parseInt(inputField.getAttribute("data-max"));
 
 
             clickCounter++;

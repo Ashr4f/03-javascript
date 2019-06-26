@@ -19,13 +19,13 @@
             var thisMinValue = parseInt(this.getAttribute("data-min"));
             var thisMaxValue = parseInt(this.getAttribute("data-max"));
 
-            if (this.innerHTML >= thisMaxValue) {
-                this.innerHTML = thisMinValue - 1;
+            if (this.innerText > thisMaxValue) {
+                this.innerText = thisMinValue - 1;
             }
-            if (this.innerHTML < 10) {
-                this.innerHTML = ("0" + (parseInt(this.innerHTML) + 1)).slice(-2);
+            if (this.innerText < 10) {
+                this.innerText = ("0" + (parseInt(this.innerText) + 1)).slice(-2);
             } else {
-                this.innerHTML = parseInt(this.innerHTML) + 1;
+                this.innerText = parseInt(this.innerText) + 1;
             }
 
             results.splice(0, results.length);

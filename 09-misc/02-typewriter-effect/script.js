@@ -11,20 +11,18 @@
 
 (() => {
     var target = document.getElementById("target");
-    var letters = target.innerHTML.split("");
-    var rapidity = 75;
+    var letters = target.innerText.split("");
 
-    target.innerHTML = "";
+    target.innerText = "";
     var i = 0;
 
-
-    function s() {
+    function typeWriterEffect() {
         if (i < letters.length) {
-            target.innerHTML += letters[i];
+            target.textContent += letters[i];
             i++;
-            setTimeout(s, rapidity);
+            setTimeout(typeWriterEffect, Math.floor(Math.random() * 200));
         }
     }
-    s();
+    typeWriterEffect();
 
 })();

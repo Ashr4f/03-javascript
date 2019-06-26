@@ -16,20 +16,18 @@
 
     inputField.addEventListener("input", function () {
 
-        counter.innerHTML = inputField.value.length + "/10";
+        counter.innerText = inputField.value.length + "/10";
 
         if (inputField.value.length >= 10) {
 
             this.onkeypress = function () {
                 return false;
-            }
-
+            };
         } else {
 
             this.onkeypress = function () {
                 return true;
-            }
-
+            };
         }
 
     });
